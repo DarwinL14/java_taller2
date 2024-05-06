@@ -5,14 +5,11 @@ import java.time.LocalDate;
 public class Habilitante1 extends Habilitante{
 
     private String nombre;
-    private LocalDate fechaInicio;
-    private LocalDate fechaFin;
+  
 
-    public Habilitante1(Double valor, String nombre, LocalDate fechaInicio, LocalDate fechaFin) {
-        super(valor);
+    public Habilitante1(Double valor, LocalDate fechaInicio, LocalDate fechaFinal, String nombre) {
+        super(valor, fechaInicio, fechaFinal);
         this.nombre = nombre;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
     }
 
     public String getNombre() {
@@ -23,23 +20,14 @@ public class Habilitante1 extends Habilitante{
         this.nombre = nombre;
     }
 
-    public LocalDate getFechaInicio() {
-        return fechaInicio;
+    @Override
+    public String toString() {
+        return "Habilitante1 [nombre=" + nombre + ", fechaInicio=" + fechaInicio + ", fechaFinal=" + fechaFinal + "]";
     }
 
-    public void setFechaInicio(LocalDate fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
+    
 
-    public LocalDate getFechaFin() {
-        return fechaFin;
-    }
-
-    public void setFechaFin(LocalDate fechaFin) {
-        this.fechaFin = fechaFin;
-    }
- 
-
+    
    
 
 }

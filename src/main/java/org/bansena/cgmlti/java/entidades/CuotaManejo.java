@@ -4,17 +4,24 @@ import java.time.LocalDate;
 
 import org.bansena.cgmlti.java.pruebas.IComportamientoAnimal;
 
-public class CuotaManejo <E>{
+public class CuotaManejo <E extends Habilitante>{
     private LocalDate fechaInicio;
     private LocalDate fechaFinal;
     private Double valor;
     private E habilitante;
 
 
+    
     public CuotaManejo(LocalDate fechaInicio, LocalDate fechaFinal, Double valor, E habilitante) {
-        this.fechaInicio = fechaInicio;
-        this.fechaFinal = fechaFinal;
-        this.valor = valor;
+        this.fechaInicio = habilitante.fechaInicio;
+        this.fechaFinal = habilitante.fechaFinal;
+        this.valor = habilitante.valor;
+        this.habilitante = habilitante;
+    }
+
+
+    public CuotaManejo(E habilitante) {
+        this.valor = habilitante.getValor();
         this.habilitante = habilitante;
     }
 
@@ -56,6 +63,13 @@ public class CuotaManejo <E>{
 
     public void setHabilitante(E habilitante) {
         this.habilitante = habilitante;
+    }
+
+
+    @Override
+    public String toString() {
+        return "CuotaManejo [ valor=" + valor
+                + ", habilitante=" + habilitante + "]";
     }
 
     

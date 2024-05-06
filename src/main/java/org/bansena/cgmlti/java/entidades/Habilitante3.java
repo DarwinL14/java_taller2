@@ -6,8 +6,9 @@ public class Habilitante3 extends Habilitante{
     private Integer numero;
     private LocalDate año;
 
-    public Habilitante3(Double valor, Integer numero, LocalDate año) {
-        super(valor);
+    
+    public Habilitante3(Double valor, LocalDate fechaInicio, LocalDate fechaFinal, Integer numero, LocalDate año) {
+        super(valor, fechaInicio, fechaFinal);
         this.numero = numero;
         this.año = año;
     }
